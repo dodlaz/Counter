@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en" manifest="offline.appcache">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+        
+    <title>Counter</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+  </head>
+  <body>
+    <div>
+      <input type="number" id="leu" placeholder="Total Leukocytes: [Input value] x 10^9/l"></input>
+      
+      <div id="helpButton" onclick="document.getElementById('helpView').style.display='block';">?</div>
+    </div>
+      <table id="counter">
+      </tr>
+        <td id="t1"></td>
+        <td id="t2"></td> 
+        <td id="t3"></td>
+      </tr>
+      <tr>
+        <td id="t4"></td>
+        <td id="t5"></td> 
+        <td id="t6"></td>
+      </tr>
+      <tr>
+        <td id="t7"></td>
+        <td id="t8"></td> 
+        <td id="t9"></td>
+      </tr>
+      <tr>
+        <td id="tot"></td>
+        <td id="t0"></td> 
+        <td id="reset">Reset</td>
+      </tr>
+
+    </table>
+
+    <div id="resetConfirmView" class="modal">
+      <div id="rm" class="modal-content animate">
+        Are you sure you want to reset?<br>
+        <button onclick="resetNow();">Yes</button>
+        <button onclick="document.getElementById('resetConfirmView').style.display='none';">No</button>
+      </div>
+    </div>
+
+
+    <div id="helpView" class="modal">
+      <div id="rhelp" class="modal-content animate">
+        <p>
+          <b>?:</b> Help<br>
+          <b>1-9:</b> Count up<br>
+          <b>Shift 1-9:</b> Count down<br>
+          <b>r:</b> Reset<br>
+          <br>
+          <b>Esc:</b> to exit help menu.
+        </p>
+      </div>
+    </div>
+
+    <script src="./js/jquery-3.2.1.min.js"></script>
+    <script src="./js/scripts.js"></script>
+  </body>
+</html>
