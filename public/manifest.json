@@ -1,0 +1,22 @@
+{
+    "short_name": "Counter",
+    "name": "Counter",
+    "icons": [
+        {
+            "src": "img/celly_counter.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        },{
+            "src": "img/celly_counter.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        },{
+            "src": "img/celly_counter.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ],
+    "start_url": "/index.html",
+    "display": "standalone",
+    "orientation": "portrait"
+}

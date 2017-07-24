@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en" manifest="offline.appcache">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    
+    <title>Counter</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="manifest" href="/manifest.json">
+    <link href="img/celly_counter.png" rel="apple-touch-icon" />
+    <link href="img/celly_counter.png" rel="apple-touch-icon" sizes="152x152" />
+    <link href="img/celly_counter.png" rel="apple-touch-icon" sizes="167x167" />
+    <link href="img/celly_counter.png" rel="apple-touch-icon" sizes="180x180" />
+    <link href="img/celly_counter.png" rel="icon" sizes="192x192" />
+    <link href="img/celly_counter.png" rel="icon" sizes="128x128" />
+    
+   
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-6076049690574439",
+      enable_page_level_ads: true
+      });
+    </script>
+  </head>
+  <body id="body">
+    <div>
+      <input type="number" id="leu" placeholder="Total Leukocytes: [Input value] x 10^9/l" step="0.1" autofocus></input>
+      
+      
+      <div id="helpButton" onclick="document.getElementById('helpView').style.display='block';">?</div>
+    </div>
+    <table id="counter">
+</tr>
+<td id="t1"></td>
+<td id="t2"></td> 
+<td id="t3"></td>
+</tr>
+<tr>
+  <td id="t4"></td>
+  <td id="t5"></td> 
+  <td id="t6"></td>
+</tr>
+<tr>
+  <td id="t7"></td>
+  <td id="t8"></td> 
+  <td id="t9"></td>
+</tr>
+<tr>
+  <td id="tot"></td>
+  <td id="t0"></td> 
+  <td id="reset">Reset</td>
+</tr>
+
+</table>
+
+<div id="resetConfirmView" class="modal">
+  <div id="rm" class="modal-content animate">
+    Are you sure you want to reset?<br>
+    <button onclick="resetNow();">Yes</button>
+    <button onclick="document.getElementById('resetConfirmView').style.display='none';">No</button>
+  </div>
+</div>
+
+
+<div id="helpView" class="modal">
+  <div id="rhelp" class="modal-content animate">
+    <p>
+      <b>?:</b> Help<br>
+      <b>1-9:</b> Count up<br>
+      <b>Shift 1-9:</b> Count down<br>
+      <b>r:</b> Reset<br>
+      <br>
+      <b>Esc:</b> to exit help menu.
+    </p>
+  </div>
+</div>
+
+<script src="./js/jquery-3.2.1.min.js"></script>
+<script src="./js/scripts.js"></script>
+
+<div class="ads">
+  <img src="img/ads.png" height="1" width="1" style="display: none;" alt="">
+</div>
+</body>
+</html>

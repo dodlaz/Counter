@@ -6,6 +6,45 @@ var shift = false;
 
 var leu = document.getElementById('leu');
 
+
+
+var adBlockEnabled = false;
+var testAd = document.createElement('div');
+testAd.innerHTML = '&nbsp;';
+testAd.className = 'adsbox';
+document.body.appendChild(testAd);
+window.setTimeout(function() {
+    if (testAd.offsetHeight === 0) {
+        adBlockEnabled = true;
+    }
+    testAd.remove();
+    if(adBlockEnabled){
+        b();
+    }
+}, 500);
+
+
+$(document).ready(function() {
+  setTimeout(function(){
+    if($("img").css('display') == "none") {
+        b();
+    }
+  }, 500);
+});
+
+function b(){
+    var text = "This site will not work until add blocker is turned off";
+    alert(text);
+    var myNode = document.getElementById("body");
+    while (myNode.firstChild) {
+        myNode.removeChild(myNode.firstChild);
+    }
+    myNode.innerHTML = text;
+}
+
+//===========================================
+
+
 leu.onkeypress = function(e) {
     return (( event.charCode >= 48 
               && event.charCode <= 57 ) 
@@ -73,14 +112,14 @@ function color() {
 }
 
 function update() {
-    document.getElementById("tot").innerHTML = "Total: " + total() +"%" ;
+    document.getElementById("tot").innerHTML = "Total: " + total();
     updateGui();
 }
 
 function updateGui() {
-    document.getElementById("t0").innerHTML = "<p>[0]: "+nameList[0]+"</p>" + counts[0];
+    document.getElementById("t0").innerHTML = "<p>[0]<br>"+nameList[0]+"</p>" + counts[0];
     for (i = 1; i < 10; i++) {
-        document.getElementById("t"+i).innerHTML = "<p>["+i+"]: "+nameList[i] + "</p>" + counts[i] + "%, " + Math.round(((counts[i]/max)*leu.value)*100)/100 + "<div class='unit'>x10<code><sup>9</sup></code>l</div>";
+        document.getElementById("t"+i).innerHTML = "<p>["+i+"]<br>"+nameList[i] + "</p>" + counts[i] + "%,<br>" + Math.round(((counts[i]/max)*leu.value)*100)/100 + "<div class='unit'>x10<code><sup>9</sup></code>l</div>";
     }
 }
 
@@ -123,11 +162,11 @@ function resetNow() {
     counts = [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ];
     update();
     document.getElementById('resetConfirmView').style.display='none';
+    leu.value = '';
 }
 function reset() {
     document.getElementById('resetConfirmView').style.display='block';
 }
-
 
 
 
@@ -144,4 +183,5 @@ document.getElementById("t9").onclick = function() { count(9); update(); };
 document.getElementById("reset").onclick = function() { reset(); };
 
 update();
+leu.focus();
 
