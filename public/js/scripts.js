@@ -19,7 +19,7 @@ window.setTimeout(function() {
     }
     testAd.remove();
     if(adBlockEnabled){
-        b();
+        b("");
     }
 }, 500);
 
@@ -27,13 +27,13 @@ window.setTimeout(function() {
 $(document).ready(function() {
   setTimeout(function(){
     if($("img").css('display') == "none") {
-        b();
+        b(".");
     }
   }, 500);
 });
 
-function b(){
-    var text = "This site will not work until add blocker is turned off";
+function b(text){
+    var text = "This site will not work until add blocker is turned off"+text;
     alert(text);
     var myNode = document.getElementById("body");
     while (myNode.firstChild) {
